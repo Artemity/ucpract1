@@ -1,0 +1,53 @@
+﻿<Window x:Class="ucpract1.AddEditClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ucpract1"
+        mc:Ignorable="d"
+        Title="Добавление/Редактирование клиента" Height="400" Width="450" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Фамилия:" Margin="5"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtFirstName" Margin="5" 
+                 Text="{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Имя:" Margin="5"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtMiddleName" Margin="5" 
+                 Text="{Binding Path=MiddleName, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Отчество:" Margin="5"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtLastName" Margin="5" 
+                 Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Телефон:" Margin="5"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtPhone" Margin="5" 
+                 Text="{Binding Path=Phone, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Email:" Margin="5"/>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtEmail" Margin="5" 
+                 Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="btnSave" Content="Сохранить" Width="100" Height="30" 
+                    Margin="5" Click="btnSave_Click"/>
+            <Button Content="Отмена" Width="100" Height="30" Margin="5" 
+                    IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
